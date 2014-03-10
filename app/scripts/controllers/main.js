@@ -41,4 +41,6 @@ angular.module('fivestarApp')
 
     $scope.$watch('query', $scope.updateURL);
     $scope.$watch('index', $scope.updateURL);
+    $scope.$watch('node', $scope.updateURL);
+    $scope.$watch('brand', $scope.updateURL);
 });
