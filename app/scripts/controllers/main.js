@@ -15,14 +15,28 @@ angular.module('fivestarApp')
             // alert or something to show them they need to select a thing
             return;
         }
-        $scope.results = Search.query({
+        $scope.results = Search.get({
             query: $scope.query,
-            index:$scope.index,
+            index: $scope.index,
             node: $scope.node,
             brand: $scope.brand
         });
     });
 
-    $scope.$watch('query', $scope.updateSearch);
-    $scope.$watch('index', $scope.updateSearch);
+    $scope.$on('$routeChangeSuccess', function() {
+        // $scope.index = $routeParams.index || 'none';
+        // $scope.query = $routeParams.query || '';
+        // $scope.node = $routeParams.node || undefined;
+        // $scope.brand = $routeParams.brand || undefined;
+        debugger;
+        $scope.results = Search.get({
+            query: $scope.query,
+            index: $scope.index,
+            node: $scope.node,
+            brand: $scope.brand
+        });
+    });
+
+    // $scope.$watch('query', $scope.updateSearch);
+    // $scope.$watch('index', $scope.updateSearch);
 });
