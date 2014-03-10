@@ -5,9 +5,10 @@ angular.module('fivestarApp')
     return {
         templateUrl: 'views/partials/searchheader.html',
         restrict: 'AE',
-        scope: {
-            'query': '='
-        },
+        // scope: {
+        //     'query': '=',
+        //     'index': '='
+        // },
         link: function postLink(scope, element) {
 
         }

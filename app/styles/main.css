@@ -1,6 +1,8 @@
 
 .search-index {
     width: auto !important;
+    font-size: 0.8em;
+    margin-right: 2%;
 }
 
 .search-header-cont {

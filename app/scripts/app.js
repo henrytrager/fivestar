@@ -3,7 +3,8 @@
 angular.module('fivestarApp', [
     'ngCookies',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'rt.debounce'
 ])
 .config(function ($routeProvider, $locationProvider) {
     $routeProvider
