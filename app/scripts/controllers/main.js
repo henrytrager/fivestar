@@ -2,11 +2,15 @@
 
 angular.module('fivestarApp')
 .controller('MainCtrl', function ($scope, Search, debounce) {
-    $scope.index = 'All';
+    $scope.index = 'none';
     $scope.query = '';
 
     $scope.updateSearch = debounce(400, function() {
         if ($scope.query.length <= 0) {
+            return;
+        }
+        if ($scope.index === 'none') {
+            // alert or something to show them they need to select a thing
             return;
         }
         $scope.results = Search.query({query: $scope.query, index:$scope.index});
