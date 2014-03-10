@@ -43,4 +43,18 @@ angular.module('fivestarApp')
     $scope.$watch('index', $scope.updateURL);
     $scope.$watch('node', $scope.updateURL);
     $scope.$watch('brand', $scope.updateURL);
+
+
+    // NODE
+    $scope.isSelectedNode = function() {
+
+    };
+
+    $scope.selectBin = function(params) {
+        if (params.Name === 'Brand') {
+            $scope.brand = params.Value;
+        } else if (params.Name === 'BrowseNode') {
+            $scope.node = params.Value;
+        }
+    };
 });

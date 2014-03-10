@@ -14,3 +14,12 @@
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
+
+.node-cont {
+    display: inline;
+}
+
+.node-btn {
+    font-size: 0.8em;
+    margin-bottom: 3px;
+}

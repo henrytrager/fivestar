@@ -1,10 +1,21 @@
 <div searchheader></div>
 
-<div class="results-cont">
+
+<div class="row nodes-cont">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row" ng-repeat="section in results.narrowNodes">
+            <h4>Narrow by <b>{{section['@'].NarrowBy}}</b></h4>
+            <div class="node-cont" ng-repeat="n in section.Bin">
+                <button class="btn btn-info node-btn" ng-click="selectBin(n.BinParameter)">{{n.BinName}} ({{n.BinItemCount}})</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row results-cont">
 
 </div>
 
 
 <div class="footer">
-  <p>♥ from the Yeoman team</p>
+  <p>♥ FiveStar.io</p>
 </div>
