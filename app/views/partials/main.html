@@ -1,7 +1,7 @@
 <div searchheader></div>
 
 
-<div class="row nodes-cont">
+<div class="row nodes-cont" ng-show="results">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row" ng-repeat="section in results.narrowNodes">
             <h4>Narrow by <b>{{section['@'].NarrowBy}}</b></h4>
@@ -11,8 +11,11 @@
         </div>
     </div>
 </div>
-<div class="row results-cont">
+<div class="row results-cont" ng-show="results">
 
+</div>
+<div class="row loading" ng-hide="!loading || (results.results.length > 0)">
+    LOADING...
 </div>
 
 
