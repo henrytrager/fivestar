@@ -2,7 +2,7 @@
 
 angular.module('fivestarApp')
 .controller('MainCtrl', function ($scope, Search, debounce) {
-    $scope.index = 'aps';
+    $scope.index = 'All';
     $scope.query = '';
 
     $scope.updateSearch = debounce(400, function() {
