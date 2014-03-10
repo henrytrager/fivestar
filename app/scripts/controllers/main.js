@@ -47,13 +47,27 @@ angular.module('fivestarApp')
 
 
     // NODE
-    $scope.selectBin = function(params) {
-        if (params.Name === 'Brand') {
-            $scope.brand = params.Value;
-        } else if (params.Name === 'BrowseNode') {
-            $scope.node = params.Value;
+    $scope.selectBin = function(bin) {
+        if (bin.Name === 'Brand') {
+            $scope.brand = bin.Value;
+        } else if (bin.Name === 'BrowseNode') {
+            $scope.node = bin.Value;
         }
+    };
 
+    $scope.isBin = function(bin) {
+        if (bin === 'Brand') {
+            return $scope.brand !== undefined;
+        } else if (bin === 'BrowseNode') {
+            return $scope.node !== undefined;
+        }
+    };
 
+    $scope.clearBin = function(bin) {
+        if (bin.Name === 'Brand') {
+            delete $scope.brand;
+        } else if (bin.Name === 'BrowseNode') {
+            delete $scope.node;
+        }
     };
 });

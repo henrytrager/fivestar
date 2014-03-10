@@ -23,3 +23,13 @@
     font-size: 0.8em;
     margin-bottom: 3px;
 }
+
+.nodes {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.item-img {
+    max-height: 300px;
+}
