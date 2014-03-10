@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fivestarApp')
-.controller('MainCtrl', function ($scope, Search, debounce) {
+.controller('MainCtrl', function ($scope, Search, debounce, $routeParams) {
     $scope.index = 'none';
     $scope.query = '';
 
