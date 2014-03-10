@@ -3,13 +3,13 @@
 angular.module('fivestarApp')
 .directive('searchheader', function () {
     return {
-        templateUrl: 'partials/searchheader.html',
-        restrict: 'E',
+        templateUrl: 'views/partials/searchheader.html',
+        restrict: 'AE',
         scope: {
             'query': '='
         },
         link: function postLink(scope, element) {
-            element.text('this is the searchheader directive');
+
         }
     };
 });
