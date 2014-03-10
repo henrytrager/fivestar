@@ -47,10 +47,6 @@ angular.module('fivestarApp')
 
 
     // NODE
-    $scope.isSelectedNode = function() {
-
-    };
-
     $scope.selectBin = function(params) {
         if (params.Name === 'Brand') {
             $scope.brand = params.Value;

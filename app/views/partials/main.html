@@ -15,11 +15,11 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row" ng-repeat="bracket in results.results">
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                {{bracket.minPrice}} - {{bracket.maxPrice}}
+                {{bracket | aPrice}}
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                 <div class="row" ng-repeat="item in bracket.items">
-                    {{item.ASIN | filter:aPrice}}
+                    {{item.ASIN}}
                 </div>
             </div>
 
