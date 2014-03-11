@@ -6,7 +6,7 @@
         <div class="row" ng-repeat="section in results.narrowNodes">
             <div class="nodes">
                 <div class="row">
-                    <span class="node-title"><h4>Narrow by <b>{{section['@'].NarrowBy}}</b></h4>
+                    <span class="node-title"><h4>Narrow by <b>{{section['@'].NarrowBy | prettyNodeName}}</b></h4>
                         <button class="btn btn-danger btn-xs node-btn clear" ng-click="clearBin(section['@'].NarrowBy)" ng-show="isBin(section['@'].NarrowBy)">Clear {{section['@'].NarrowBy}}</button>
                     </span>
                 </div>
