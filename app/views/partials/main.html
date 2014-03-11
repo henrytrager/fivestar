@@ -1,5 +1,9 @@
 <div searchheader></div>
 
+<div class="alert alert-danger alert-dismissable alert-err" ng-show="err">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Dang!</strong> {{err}}
+</div>
 
 <div class="row nodes-cont" ng-show="results">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

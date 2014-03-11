@@ -24,17 +24,21 @@ angular.module('fivestarApp')
     };
 
     $scope.getData = debounce(400, function() {
-        $scope.results = undefined;
+
         $scope.loading = true;
+        $scope.err = undefined;
         if ($scope.query.length <= 0) {
             $scope.loading = false;
+            $scope.err = 'Please search for a Keyword.';
             return;
         }
-        // if ($scope.index === 'none') {
-        //     // alert or something to show them they need to select a thing
-        //     $scope.loading = false;
-        //     return;
-        // }
+        if ($scope.index === 'All') {
+            // alert or something to show them they need to select a thing
+            $scope.loading = false;
+            $scope.err = 'Please choose a Department';
+            return;
+        }
+        $scope.results = undefined;
         $scope.results = Search.get({
             query: $scope.query,
             index: $scope.index,
@@ -43,7 +47,9 @@ angular.module('fivestarApp')
         });
     });
 
-    $scope.$on('$routeChangeSuccess', $scope.getData);
+    $scope.$on('$routeChangeSuccess', function() {
+        $scope.getData();
+    });
 
     $scope.$watch('query', $scope.updateURL);
     $scope.$watch('index', function() {

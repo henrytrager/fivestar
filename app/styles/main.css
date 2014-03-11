@@ -51,3 +51,7 @@
 .node-btn.clear {
     margin-left: 2px;
 }
+
+.alert-err {
+    margin-top: 20px;
+}
