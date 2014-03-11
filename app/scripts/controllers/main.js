@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fivestarApp')
-.controller('MainCtrl', function ($scope, Search, debounce, $routeParams, $location) {
+.controller('MainCtrl', function ($scope, Search, debounce, $routeParams, $location, nx) {
 
 
     $scope.index = $routeParams.index || 'All';
@@ -11,6 +11,12 @@ angular.module('fivestarApp')
 
     $scope.didGetFirst = false;
     $scope.loading = false;
+
+    $scope.initURLChange = nx.once(function() {
+        $scope.$on('$routeChangeSuccess', function() {
+            $scope.getData();
+        });
+    });
 
     $scope.updateURL = function(clearOthers) {
         if ($scope.didGetFirst) {
@@ -48,6 +54,8 @@ angular.module('fivestarApp')
             node: $scope.node,
             brand: $scope.brand
         });
+
+        $scope.initURLChange();
     });
 
 

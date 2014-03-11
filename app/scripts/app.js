@@ -4,6 +4,7 @@ angular.module('fivestarApp', [
     'ngCookies',
     'ngResource',
     'ngRoute',
+    'ngSanitize',
     'rt.debounce'
 ])
 .config(function ($routeProvider, $locationProvider) {
@@ -18,4 +19,7 @@ angular.module('fivestarApp', [
     });
 
     $locationProvider.html5Mode(true);
+})
+.factory('nx', function() {
+    return window.nx;
 });

@@ -55,3 +55,12 @@
 .alert-err {
     margin-top: 20px;
 }
+
+.bracket-min-price {
+    text-align: center;
+    font-size: 2em;
+}
+.bracket-min-price-num {
+    font-size: 1.5em;
+    color: orange;
+}

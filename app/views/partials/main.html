@@ -15,7 +15,7 @@
                     </span>
                 </div>
                 <div class="row">
-                    <div class="node-cont" ng-repeat="n in section.Bin">
+                    <div class="node-cont" ng-repeat="n in section.Bin | nodeSort | orderBy:'BinItemCount':true">
                         <button class="btn btn-info node-btn" ng-click="selectBin(n.BinParameter)">{{n.BinName}} ({{n.BinItemCount}})</button>
                     </div>
                 </div>
@@ -26,8 +26,8 @@
 <div class="row results-cont" ng-show="results">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row" ng-repeat="bracket in results.results">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                {{bracket | aPrice}}
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" ng-bind-html="bracket | aPrice">
+                <!-- bracket column -->
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                 <div class="row">
