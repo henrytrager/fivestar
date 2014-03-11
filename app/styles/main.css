@@ -27,9 +27,13 @@
 .nodes {
     margin-right: 5%;
     margin-left: 5%;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
 .item-img {
     max-height: 300px;
+}
+
+.results-cont {
+    margin-top: 20px;
 }
