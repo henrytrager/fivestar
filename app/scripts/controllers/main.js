@@ -9,12 +9,15 @@ angular.module('fivestarApp')
     $scope.node = $routeParams.node || undefined;
     $scope.brand = $routeParams.brand || undefined;
 
+    $scope.didGetFirst = false;
     $scope.loading = false;
 
     $scope.updateURL = function(clearOthers) {
-        clearOthers = clearOthers === true ? true :false;
-        $scope.node = clearOthers ? undefined : $scope.node;
-        $scope.brand = clearOthers ? undefined : $scope.brand;
+        if ($scope.didGetFirst) {
+            clearOthers = clearOthers === true ? true : false;
+            $scope.node = clearOthers ? undefined : $scope.node;
+            $scope.brand = clearOthers ? undefined : $scope.brand;
+        }
 
         $location.search('query', $scope.query);
         $location.search('index', $scope.index);
@@ -24,7 +27,7 @@ angular.module('fivestarApp')
     };
 
     $scope.getData = debounce(400, function() {
-
+        $scope.didGetFirst = true;
         $scope.loading = true;
         $scope.err = undefined;
         if ($scope.query.length <= 0) {
@@ -47,9 +50,6 @@ angular.module('fivestarApp')
         });
     });
 
-    $scope.$on('$routeChangeSuccess', function() {
-        $scope.getData();
-    });
 
     $scope.$watch('query', $scope.updateURL);
     $scope.$watch('index', function() {
