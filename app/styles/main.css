@@ -27,7 +27,7 @@
 .nodes {
     margin-right: 5%;
     margin-left: 5%;
-    margin-bottom: 2px;
+    margin-top: 10px;
 }
 
 .item-img {
@@ -36,4 +36,18 @@
 
 .results-cont {
     margin-top: 20px;
+}
+
+.item-price {
+    text-align: center;
+}
+.item-price-num {
+    color: orange;
+}
+
+.node-title > h4 {
+    display: inline;
+}
+.node-btn.clear {
+    margin-left: 2px;
 }

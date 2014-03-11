@@ -7,7 +7,7 @@
             <div class="input-group">
                 <div class="input-group-btn">
                     <select class="form-control pull-left search-index" ng-model="index">
-                        <option value="none">Choose a Dept.</option>
+                        <option value="All">Choose a Dept.</option>
                         <option value="Appliances">Appliances</option>
                         <option value="MobileApps">Apps for Android</option>
                         <option value="ArtsAndCrafts">Arts & Crafts</option>
@@ -45,7 +45,7 @@
                         <option value="Watches">Watches</option>
                     </select>
                 </div>
-                <input type="text" class="form-control" ng-model="query" placeholder="toaster, t-shirt, DSLR">
+                <input type="search" class="form-control" ng-model="query" placeholder="toaster, t-shirt, DSLR">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" ng-click="updateSearch">Go!</button>
                 </span>
