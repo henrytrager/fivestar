@@ -6,6 +6,7 @@
   <strong>Dang!</strong> {{err}}
 </div>
 
+<!-- narrow nodes block to narrow search  -->
 <div class="row nodes-cont" ng-show="results">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row" ng-repeat="section in results.narrowNodes">
@@ -24,6 +25,8 @@
         </div>
     </div>
 </div>
+
+<!-- results block -->
 <div class="row results-cont" ng-show="results">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row" ng-repeat="bracket in results.results">
@@ -59,6 +62,8 @@
         </div>
     </div>
 </div>
+
+<!-- loading block (to be replaced with loading indicator of course) -->
 <div class="row loading" ng-hide="!loading || (results.results.length > 0)">
     LOADING...
 </div>
